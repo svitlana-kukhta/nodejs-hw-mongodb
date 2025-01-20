@@ -7,7 +7,7 @@ import { getAllContacts, getContactById } from './services/contacts.js';
 
 const PORT = Number(getEnvVar('PORT', '3000'));
 
-export const setupServer = () => {
+export const startServer = () => {
     const app = express();
     app.use(express.json());
     app.use(cors());
@@ -68,5 +68,4 @@ export const setupServer = () => {
     });
 
 });
-
    };
