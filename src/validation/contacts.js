@@ -11,7 +11,7 @@ export const createContactSchema = Joi.object({
       'string.pattern.base': 'Phonenumber must be a valid format (digits, +, -, spaces, parentheses)',
       'any.required': 'Phonenumber is required',
   }),
-    email: Joi.string().email({ minDomainSegments: 2 }).messages({
+    email: Joi.string().email().messages({
       'string.email': 'Email must be a valid email address',
     }),
     isFavourite: Joi.boolean(),
