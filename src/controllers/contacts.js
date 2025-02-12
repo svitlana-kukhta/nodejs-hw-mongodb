@@ -14,6 +14,7 @@ export const getContactsController = async (req, res, next) => {
     const filter = { ...parseFilterParams(req.query), userId };
 
     const contacts = await getAllContacts({
+    userId,
     page,
     perPage,
     sortBy,
@@ -32,7 +33,7 @@ export const getContactsController = async (req, res, next) => {
 };
 
 export const getContactByIdController = async (req, res, next) => {
-  const { contactId } = req.params;
+  try {const { contactId } = req.params;
   const { _id: userId } = req.user;
     const contact = await getContactById({ _id: contactId, userId });
 
@@ -45,8 +46,9 @@ export const getContactByIdController = async (req, res, next) => {
         message: `Successfully found contact with id ${contactId}!`,
         data: contact,
     });
-
-};
+  } catch (error) {next(error);    
+  }
+  };
 
 export const createContactController = async (req, res, next) => {
   try {
