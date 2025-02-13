@@ -37,7 +37,7 @@ const [contactsCount, contacts] = await Promise.all([
   };
 };
 
-export const getContactById = async (id, userId) => {
+export const getContactById = async ({ id, userId }) => {
   const contact = await ContactsCollection.findOne({_id: id, userId});
   return contact;
 };
