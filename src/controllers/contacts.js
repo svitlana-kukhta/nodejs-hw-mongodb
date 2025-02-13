@@ -54,7 +54,7 @@ export const createContactController = async (req, res, next) => {
   try {
     const { _id: userId } = req.user;
     const validatedData = await createContactSchema.validateAsync(req.body, { abortEarly: false });
-    const contact = await createContact({ validatedData, userId });
+    const contact = await createContact(validatedData, userId);
 
     res.status(201).json({
     status: 201,
