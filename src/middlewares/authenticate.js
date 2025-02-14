@@ -35,10 +35,6 @@ export const authenticate = async (req, res, next) => {
     next(createHttpError(401, 'Access token expired'));
   }
 
-  console.log('Session:', session);
-  console.log('Session userId type:', typeof session.userId);
-  console.log('Session userId value:', session.userId);
-
   const user = await UsersCollection.findById(session.userId);
 
   if (!user) {
