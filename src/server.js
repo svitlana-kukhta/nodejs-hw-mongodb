@@ -31,7 +31,7 @@ export const startServer = () => {
         });
     });
 
-    app.use('/api', router);
+    app.use(router);
 
     app.use('*', notFoundHandler);
 
