@@ -22,15 +22,11 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
-<<<<<<< HEAD
     "cloudinary": "^2.5.1",
-=======
->>>>>>> f054d5a440c96cdb8ec56602fa2d175e234db319
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-<<<<<<< HEAD
     "handlebars": "^4.7.8",
     "http-errors": "^2.0.0",
     "joi": "^17.13.3",
@@ -39,12 +35,6 @@
     "mongoose": "^8.9.7",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.10.0",
-=======
-    "http-errors": "^2.0.0",
-    "joi": "^17.13.3",
-    "mongodb": "^6.12.0",
-    "mongoose": "^8.9.7",
->>>>>>> f054d5a440c96cdb8ec56602fa2d175e234db319
     "pino-http": "^10.4.0"
   }
 }
