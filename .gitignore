@@ -137,7 +137,4 @@ dist
 .pnp.*
 
 .env
-<<<<<<< HEAD
 .env.example
-=======
->>>>>>> f054d5a440c96cdb8ec56602fa2d175e234db319
