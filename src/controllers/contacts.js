@@ -56,7 +56,20 @@ export const getContactByIdController = async (req, res, next) => {
 export const createContactController = async (req, res, next) => {
   try {
     const { _id: userId } = req.user;
-    const validatedData = await createContactSchema.validateAsync(req.body, { abortEarly: false });
+    const photo = req.file;
+    let photoUrl;
+
+    if (photo) {
+    if (getEnvVar('ENABLE_CLOUDINARY') === 'true') {
+      photoUrl = await saveFileToCloudinary(photo);
+    } else {
+      photoUrl = await saveFileToUploadDir(photo);
+    }
+  }
+
+    const validatedData = await createContactSchema.validateAsync({ ...req.body, photo: photoUrl }, { abortEarly: false });
+
+
     const contact = await createContact( validatedData, userId );
 
     res.status(201).json({
