@@ -27,7 +27,7 @@ requestBody:
           phoneNumber:
             description: "Contact's number"
             type: string
-            example: '+38 093 078 98 23'
+            example: '+380930789823'
           email:
             description: "Contact's email"
             type: string

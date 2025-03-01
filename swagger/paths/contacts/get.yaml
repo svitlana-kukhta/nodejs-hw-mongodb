@@ -34,7 +34,17 @@ parameters:
     name: name
     schema:
       type: string
-      example: John Doe
+      example: 'John Doe'
+  - in: query
+    name: phoneNumber
+    schema:
+      type: string
+      example: '+380668379845'
+  - in: query
+    name: isFavourite
+    schema:
+      type: boolean
+      example: false
   - in: query
     name: contactType
     schema:
